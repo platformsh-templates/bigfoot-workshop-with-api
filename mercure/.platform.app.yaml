@@ -1,0 +1,54 @@
+name: mercure
+type: golang:1.18
+source:
+    root: mercure/.config
+
+build:
+  flavor: none
+
+variables:
+  env:
+    MERCUREVERSION: 0.14.4
+    SERVER_NAME: ":8888"
+    MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
+    MERCURE_EXTRA_DIRECTIVES: |
+      cors_origin *
+      publish_origins *
+      subscriptions
+      demo
+    GLOBAL_OPTIONS: |
+      auto_https off
+    MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+    MERCURE_SUBSCRIBER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+
+disk: 1024
+
+mounts:
+  "database": { source: local, source_path: "database" }
+  "/.local": { source: local, source_path: .local }
+  "/.config": { source: local, source_path: .config }
+
+hooks:
+    build: |
+      #Install Mercure using cache
+      echo "${MERCUREVERSION}"
+      FILE="mercure_${MERCUREVERSION}_Linux_x86_64.tar.gz"
+      if [ ! -f "$PLATFORM_CACHE_DIR/$FILE" ]; then
+        URL="https://github.com/dunglas/mercure/releases/download/v${MERCUREVERSION}/$FILE"
+        echo "Downloading $URL"
+        wget -O "$PLATFORM_CACHE_DIR/$FILE" $URL
+      else
+        echo "Found $FILE in cache, using cache"
+      fi
+      file $PLATFORM_CACHE_DIR/$FILE
+      tar xvzf $PLATFORM_CACHE_DIR/$FILE
+web:
+    commands:
+        start: ./mercure run --config Caddyfile.platform_sh
+    locations:
+        /:
+            allow: true
+            scripts: false
+            passthru: true
+            request_buffering:
+              enabled: false

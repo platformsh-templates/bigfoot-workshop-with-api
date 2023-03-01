@@ -1,0 +1,7 @@
+database:
+    type: postgresql:13
+    disk: 1024
+
+#kafka:
+#    type: kafka:2.1
+#    disk: 512
