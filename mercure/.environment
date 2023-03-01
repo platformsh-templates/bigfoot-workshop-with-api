@@ -1,4 +1,4 @@
-export PSH_SITE_URL="$(echo "$PLATFORM_ROUTES" | base64 --decode | jq -r 'to_entries[] | select(.value.upstream=="mercure") | .key')"
+export PSH_SITE_URL="$(echo "$PLATFORM_ROUTES" | base64 --decode | jq -r 'to_entries[] | select(.value.upstream=="mercure") | .key' | awk '{print substr($0, 0, length($0))}')"
 export MERCURE_PUBLISHER_JWT_KEY="!ChangeThisMercureHubJWTSecretKey!"
 export MERCURE_SUBSCRIBER_JWT_KEY="!ChangeThisMercureHubJWTSecretKey!"
 export MERCURE_EXTRA_DIRECTIVES="
