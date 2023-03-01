@@ -18,9 +18,9 @@ export API_SITE_NAME="API Platform.sh"
 
 export APP_SECRET=$(echo $PLATFORM_PROJECT_ENTROPY)
 
-export MERCURE_URL=$(echo $PLATFORM_ROUTES | base64 --decode | jq -r 'to_entries[] | select(.value.id == "mercure") | .key')/.well-known/mercure/
-export MERCURE_PUBLIC_URL=$(echo $PLATFORM_ROUTES | base64 --decode | jq -r 'to_entries[] | select(.value.id == "mercure") | .key')/.well-known/mercure/
-export MERCURE_PUBLISH_URL=$(echo $PLATFORM_ROUTES | base64 --decode | jq -r 'to_entries[] | select(.value.id == "mercure") | .key')/.well-known/mercure/
+export MERCURE_URL=$(echo $PLATFORM_ROUTES | base64 --decode | jq -r 'to_entries[] | select(.value.id == "mercure") | .key').well-known/mercure/
+export MERCURE_PUBLIC_URL=$(echo $PLATFORM_ROUTES | base64 --decode | jq -r 'to_entries[] | select(.value.id == "mercure") | .key').well-known/mercure/
+export MERCURE_PUBLISH_URL=$(echo $PLATFORM_ROUTES | base64 --decode | jq -r 'to_entries[] | select(.value.id == "mercure") | .key').well-known/mercure/
 
 # The secret used to sign the JWTs
 export MERCURE_JWT_SECRET="!ChangeThisMercureHubJWTSecretKey!"
