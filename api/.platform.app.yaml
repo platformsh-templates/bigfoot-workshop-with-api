@@ -54,8 +54,11 @@ mounts:
 # The hooks that will be performed when the package is deployed.
 hooks:
   build: |
-    php bin/console -e prod assets:install --no-debug
+    set -x -e
+
+    curl -s https://get.symfony.com/cloud/configurator | bash
+    symfony-build
   deploy: |
-    php bin/console --env=prod doctrine:schema:update --dump-sql
-    php bin/console --env=prod doctrine:schema:update --force
-    php bin/console --env=prod cache:clear
+    set -x -e
+
+    symfony-deploy
