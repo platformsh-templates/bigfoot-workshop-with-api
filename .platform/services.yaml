@@ -1,0 +1,8 @@
+db:
+    type: postgresql:14
+    disk: 2048
+
+cache:
+    type: redis:7.0
+    configuration:
+        maxmemory_policy: volatile-lru
