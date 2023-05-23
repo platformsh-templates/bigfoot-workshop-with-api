@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -10,23 +13,33 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: "`user`")]
+#[ApiResource(
+    operations: [
+        new Get(normalizationContext: ['groups' => 'user:item']),
+        new GetCollection(normalizationContext: ['groups' => 'user:list'])
+    ],
+)]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: Types::INTEGER)]
+    #[Groups(['user:list', 'user:item'])]
     private ?int $id = null;
 
     #[ORM\Column(type: Types::STRING, unique: true)]
     #[Assert\NotBlank]
     #[Assert\Length(min: 2, max: 100)]
+    #[Groups(['user:list', 'user:item'])]
     private ?string $username = null;
 
     #[ORM\Column(type: Types::STRING, unique: true)]
     #[Assert\Email]
+    #[Groups(['user:list', 'user:item'])]
     private ?string $email = null;
 
     #[ORM\Column(type: Types::STRING)]
@@ -36,12 +49,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private array $roles = [];
 
     #[ORM\OneToMany(mappedBy: "owner", targetEntity: BigFootSighting::class)]
+    #[Groups(['user:list', 'user:item'])]
     private Collection $bigFootSightings;
 
     #[ORM\OneToMany(mappedBy: "owner", targetEntity: Comment::class)]
+    #[Groups(['user:list', 'user:item'])]
     private Collection $comments;
 
     #[ORM\Column(type: 'datetime')]
+    #[Groups(['user:list', 'user:item'])]
     private \DateTimeInterface $agreedToTermsAt;
 
     public function __construct()

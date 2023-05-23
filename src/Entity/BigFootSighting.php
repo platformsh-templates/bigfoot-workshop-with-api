@@ -2,42 +2,60 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\BigFootSightingRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: BigFootSightingRepository::class)]
+#[ApiResource(
+    operations: [
+        new Get(normalizationContext: ['groups' => 'sighting:item']),
+        new GetCollection(normalizationContext: ['groups' => 'sighting:list'])
+    ],
+)]
 class BigFootSighting
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
+    #[Groups(['sighting:list', 'sighting:item'])]
     private ?int $id = null;
 
     #[ORM\Column(type: 'string')]
     #[Assert\NotBlank]
     #[Assert\Length(max: 255)]
+    #[Groups(['sighting:list', 'sighting:item'])]
     private string $title;
 
     #[ORM\Column(type: 'text')]
+    #[Groups(['sighting:list', 'sighting:item'])]
     private string $description;
 
     #[ORM\Column(type: 'integer')]
+    #[Groups(['sighting:list', 'sighting:item'])]
     private int $confidenceIndex;
 
     #[ORM\Column(type: 'decimal', precision: 9, scale: 6)]
+    #[Groups(['sighting:list', 'sighting:item'])]
     private float $latitude;
 
     #[ORM\Column(type: 'decimal', precision: 9, scale: 6)]
+    #[Groups(['sighting:list', 'sighting:item'])]
     private float $longitude;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'bigFootSightings')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['sighting:list', 'sighting:item'])]
     private User $owner;
 
     #[ORM\Column(type: 'datetime')]
+    #[Groups(['sighting:list', 'sighting:item'])]
     private \DateTimeInterface $createdAt;
 
     /**
@@ -45,9 +63,11 @@ class BigFootSighting
      */
     #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: "bigFootSighting")]
     #[ORM\OrderBy(['createdAt' => 'DESC'])]
+    #[Groups(['sighting:list', 'sighting:item'])]
     private Collection $comments;
 
     #[ORM\Column(type: 'integer')]
+    #[Groups(['sighting:list', 'sighting:item'])]
     private ?int $score = 0;
 
     public function __construct()

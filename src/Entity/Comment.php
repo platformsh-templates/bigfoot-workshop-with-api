@@ -2,31 +2,45 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity()]
 #[ORM\Table(name: "comment")]
+#[ApiResource(
+    operations: [
+        new Get(normalizationContext: ['groups' => 'comment:item']),
+        new GetCollection(normalizationContext: ['groups' => 'comment:list'])
+    ],
+)]
 class Comment
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: Types::INTEGER)]
+    #[Groups(['comment:list', 'comment:item'])]
     private ?int $id = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups(['comment:list', 'comment:item'])]
     private ?string $content = null;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'comments')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['comment:list', 'comment:item'])]
     private ?User $owner = null;
 
     #[ORM\ManyToOne(targetEntity: BigFootSighting::class, inversedBy: 'comments')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['comment:list', 'comment:item'])]
     private ?BigFootSighting $bigFootSighting = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups(['comment:list', 'comment:item'])]
     private \DateTime $createdAt;
 
     public function __construct()
