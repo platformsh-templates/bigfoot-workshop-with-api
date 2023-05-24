@@ -11,7 +11,7 @@ const Index = ({ data }) => {
       <h4>Recently reported sightings</h4>
       {data.bigFootSightings.bigFootSightings.edges.map(({ node }) => (
         <div class='sighting-block' key={node.id}>
-          <Link to={`/site/sighting/${node.id.split("/")[3]}`}>
+          <Link to={`/sighting/${node.id.split("/")[3]}`}>
             <p><strong>{node.title}</strong></p>
           </Link>
           <div>

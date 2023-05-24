@@ -31,7 +31,7 @@ hooks:
     # Post deploy hook builds Gatsby frontend now that backend content is available.
     post_deploy: |
         # printf "export PLATFORM_ROUTES=$PLATFORM_ROUTES" > .env/env.production
-        yarn build
+        yarn build --prefix-paths
 
 # The size of the persistent disk of the application (in MB).
 disk: 1280

@@ -27,6 +27,7 @@ if ('PLATFORM_ROUTES' in process.env) {
 
 
 module.exports = {
+  pathPrefix: `/site`,
   siteMetadata: {
     title: `Sasquatch Sightings`,
     siteUrl: `https://platform.sh`,
