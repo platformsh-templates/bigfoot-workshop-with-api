@@ -33,9 +33,6 @@ hooks:
         # printf "export PLATFORM_ROUTES=$PLATFORM_ROUTES" > .env/env.production
         yarn build
 
-relationships:
-    wordpress: "wordpress:http"
-
 # The size of the persistent disk of the application (in MB).
 disk: 1280
 

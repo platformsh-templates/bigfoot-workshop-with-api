@@ -16,7 +16,7 @@ if ('PLATFORM_ROUTES' in process.env) {
   console.log('On a Platform.sh Environment');
   var data = decode(process.env.PLATFORM_ROUTES)
   const result = Object.entries(data)
-    .filter(([key, value]) => value.primary == true)
+    .filter(([key, value]) => value.upstream == "app")
     .map(([key, value]) => key)
 
   backendURL = `${result[0]}api/graphql`
