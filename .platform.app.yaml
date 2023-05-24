@@ -62,7 +62,7 @@ mounts:
 # The configuration of app when it is exposed to the web.
 web:
     locations:
-        "/":
+        "/legacy":
             # The public directory of the app, relative to its root.
             root: "public"
             # The front-controller script to send non-static requests to.
