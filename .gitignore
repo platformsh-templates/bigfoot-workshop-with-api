@@ -25,3 +25,7 @@ yarn-error.log
 
 # Main Lando file (should be copied from .lando.symfony.yml or .lando.platformsh.yml)
 .lando.yml
+
+
+gatsby-wordpress
+gatsby

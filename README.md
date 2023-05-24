@@ -8,6 +8,7 @@ To get it working, pour some coffee or tea, and follow these steps:
 1. run `git clone git@github.com:platformsh-templates/bigfoot-workshop.git`
 1. run `cd bigfoot-workshop`
 1. run `git checkout workshop`
+
 1. run `cp .env .env.local`
 1. run `ddev composer install`
 1. run `ddev php bin/console doctrine:schema:update --force`
