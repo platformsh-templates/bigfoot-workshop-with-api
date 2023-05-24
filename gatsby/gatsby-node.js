@@ -32,7 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
       let originalPathParts = node.id.split("/")
       let newID = originalPathParts[3]
       createPage({
-        path: `/sighting/${newID}`,
+        path: `/site/sighting/${newID}`,
         component: path.resolve(`./src/templates/sighting.js`),
         context: {
           // This is the $slug variable
