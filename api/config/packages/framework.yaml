@@ -21,6 +21,8 @@ framework:
     #fragments: true
     php_errors:
         log: true
+    assets:
+        base_path: '/api'
 
 when@test:
     framework:
