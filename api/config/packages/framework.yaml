@@ -21,6 +21,7 @@ framework:
     #fragments: true
     php_errors:
         log: true
+
 when@test:
     framework:
         http_client:
@@ -29,9 +30,3 @@ when@test:
         test: true
         #session:
         #    storage_factory_id: session.storage.factory.mock_file
-
-when@dev:
-    framework:
-        http_client:
-            default_options:
-                verify_peer: false
