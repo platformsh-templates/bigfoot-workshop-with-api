@@ -12,7 +12,7 @@ dependencies:
         composer/composer: "^2"
 
 build:
-    flavor: none
+    flavor: composer
 
 runtime:
     extensions:
@@ -27,7 +27,7 @@ runtime:
 variables:
     env:
         # ensure that assets won't be built as they are already committed.
-        NO_YARN: 1
+        APP_ENV: 'prod'
     php:
         assert.active: off
 
@@ -51,38 +51,28 @@ relationships:
     database: "database:postgresql"
 
 # The size of the persistent disk of the application (in MB).
-disk: 1536
+disk: 2048
 
 # The mounts that will be performed when the package is deployed.
 mounts:
-    "/var":
-        source: local
-        source_path: "var"
+    "/var/cache": "shared:files/cache"
+    "/var/log": "shared:files/log"
+    "/var/sessions": "shared:files/sessions"
 
 # The configuration of app when it is exposed to the web.
 web:
     locations:
-        "/":
-            # The public directory of the app, relative to its root.
+        "/api":
+            passthru: "/api/index.php"
             root: "public"
-            # The front-controller script to send non-static requests to.
-            passthru: "/index.php"
-            expires: 1h
+            index:
+                - index.php
+            scripts: true
+            allow: true
+            headers:
+                Access-Control-Allow-Origin: "*"
 
 crons:
     update-sighting:
         spec: '*/5 * * * *'
         cmd: './bin/console app:update-sighting-scores'
-
-source:
-    operations:
-        update-dependencies:
-            command: |
-                set -e
-                composer update
-                git add composer.lock
-                git commit --allow-empty -m "Dependency updates."
-        sanitize-data:
-            command: |
-                set -e
-                php bin/console app:sanitize-data

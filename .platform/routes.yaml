@@ -19,7 +19,7 @@ https://{default}/api:
   upstream: "api:http"
   id: api
 
-https://{default}/gatsby:
+https://{default}/site:
   type: upstream
   # the first part should be your project name
   upstream: "gatsby:http"
