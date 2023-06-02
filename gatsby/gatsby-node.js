@@ -30,7 +30,7 @@ exports.createPages = ({ graphql, actions }) => {
   `).then(result => {
     result.data.bigFootSightings.bigFootSightings.edges.forEach(({ node }) => {
       let originalPathParts = node.id.split("/")
-      let newID = originalPathParts[3]
+      let newID = originalPathParts[4]
       createPage({
         path: `/sighting/${newID}`,
         component: path.resolve(`./src/templates/sighting.js`),
