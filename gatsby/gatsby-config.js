@@ -19,7 +19,7 @@ if ('PLATFORM_ROUTES' in process.env) {
     .filter(([key, value]) => value.upstream == "api")
     .map(([key, value]) => key)
 
-  backendURL = `${result[0]}api/graphql`
+  backendURL = `${result[0]}api/api/graphql`
 
 } else {
   console.log('Running locally with DDEV backend.');
