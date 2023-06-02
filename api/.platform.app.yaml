@@ -48,7 +48,7 @@ hooks:
 # to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
-    database: "db:postgresql"
+    database: "database:postgresql"
 
 # The size of the persistent disk of the application (in MB).
 disk: 1536
