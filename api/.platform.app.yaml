@@ -58,7 +58,7 @@ mounts:
     "/var/cache": "shared:files/cache"
     "/var/log": "shared:files/log"
     "/var/sessions": "shared:files/sessions"
-    "/public/build": "shared:public/build"
+#    "/public/build": "shared:public/build"
 
 # The configuration of app when it is exposed to the web.
 web:
