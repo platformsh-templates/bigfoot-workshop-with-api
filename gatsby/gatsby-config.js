@@ -2,7 +2,10 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 
-let backendURL = "https://localhost:8001/api/graphql"
+let backendURL = "https://localhost:8000/api/graphql"
+let index = 3;
+let pathPrefix = '/';
+let siteUrl = 'http://localhost:8080/';
 
 // Helper function to decode base64 JSON variables on Platform.sh
 function decode(value) {
@@ -18,18 +21,20 @@ if ('PLATFORM_ROUTES' in process.env) {
   const result = Object.entries(data)
       .filter(([key, value]) => value.upstream == "api")
       .map(([key, value]) => key)
-
+  index = 4;
+  pathPrefix = '/site'
+  siteUrl = `https://platform.sh`;
   backendURL = `${result[0]}/api/graphql`
 
 } else {
-  console.log('Running locally with DDEV backend.');
+  console.log('Running locally.');
 }
 
 module.exports = {
-  pathPrefix: `/site`,
+  pathPrefix: pathPrefix,
   siteMetadata: {
     title: `Sasquatch Sightings`,
-    siteUrl: `https://platform.sh`,
+    siteUrl: siteUrl,
     author: `Platform.sh DevRel`,
   },
   plugins: [

@@ -6,7 +6,7 @@
 </a>
 </p>
 
-<h1 align="center">Deploy API Platform api, API Platform admin (ReactJS) and Mercure.rocks server on Platform.sh</h1>
+<h1 align="center">Deploy a multi-app project with Bigfoot website, API Platform admin (ReactJS), Gatsby website and Mercure.rocks server on Platform.sh</h1>
 
 <p align="center">
 <strong>Contribute, request a feature, or check out our resources</strong>
@@ -15,21 +15,21 @@
 <a href="https://community.platform.sh"><strong>Join our community</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <a href="https://docs.platform.sh"><strong>Documentation</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <a href="https://platform.sh/blog"><strong>Blog</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<a href="https://github.com/platformsh-templates/API-Platform-v3/issues/new?assignees=&labels=bug&template=bug_report.yml"><strong>Report a bug</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<a href="https://github.com/platformsh-templates/API-Platform-v3/issues/new?assignees=&labels=feature+request&template=improvements.yml"><strong>Request a feature</strong></a>
+<a href="https://github.com/platformsh-templates/bigfoot-workshop-with-api/issues/new?assignees=&labels=bug&template=bug_report.yml"><strong>Report a bug</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="https://github.com/platformsh-templates/bigfoot-workshop-with-api/issues/new?assignees=&labels=feature+request&template=improvements.yml"><strong>Request a feature</strong></a>
 <br /><br />
 </p>
 
 <p align="center">
-<a href="https://github.com/platformsh-templates/API-Platform-v3/issues">
-<img src="https://img.shields.io/github/issues/platformsh-templates/API-Platform-v3.svg?style=for-the-badge&labelColor=f4f2f3&color=ffd9d9&label=Issues" alt="Open issues" />
+<a href="https://github.com/platformsh-templates/bigfoot-workshop-with-api/issues">
+<img src="https://img.shields.io/github/issues/platformsh-templates/bigfoot-workshop-with-api.svg?style=for-the-badge&labelColor=f4f2f3&color=ffd9d9&label=Issues" alt="Open issues" />
 </a>&nbsp&nbsp
-<a href="https://github.com/platformsh-templates/API-Platform-v3/pulls">
-<img src="https://img.shields.io/github/issues-pr/platformsh-templates/API-Platform-v3.svg?style=for-the-badge&labelColor=f4f2f3&color=ffd9d9&label=Pull%20requests" alt="Open PRs" />
+<a href="https://github.com/platformsh-templates/bigfoot-workshop-with-api/pulls">
+<img src="https://img.shields.io/github/issues-pr/platformsh-templates/bigfoot-workshop-with-api.svg?style=for-the-badge&labelColor=f4f2f3&color=ffd9d9&label=Pull%20requests" alt="Open PRs" />
 </a>&nbsp&nbsp
 </p>
 <p align="center">
-<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/API-Platform-v3/main/.platform/metadata/api-platform-3-php8.1.template.yaml&utm_content=platformsh-templates&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform" target="_blank">
+<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/bigfoot-workshop-with-api/tree/multiapp-finished/.platform/metadata/bigfoot-workshop-with-api.template.yaml&utm_content=platformsh-templates&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform" target="_blank">
     <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Platform.sh" width="175px">
 </a>
 </p>
@@ -51,21 +51,19 @@
 ## About
 
 <p>
-   We have just created a new multi-app project for you, based on <a href="https://api-platform.com/docs/core/" target="_blank">API Platform component</a>, <a href="https://api-platform.com/docs/admin/" target="_blank">API Platform Admin</a> and <a href="https://mercure.rocks/" target="_blank">Mercure.rocks server</a>.
-   <BR>The generated code has been optimized for a typical web application hosted on <a href="https://platform.sh/">Platform.sh</a>.
+   We have just created a new multi-app project for you, based on <a href="https://github.com/platformsh-templates/bigfoot-workshop" target="_blank">Bigfoot Project</a>, <a href="https://api-platform.com/docs/admin/" target="_blank">API Platform Admin</a>, <a href="https://www.gatsbyjs.com/" target="_blank">Gatsby</a> and <a href="https://mercure.rocks/" target="_blank">Mercure.rocks server</a>.
+   <BR>The generated code has been setup for a typical web multi-application project hosted on <a href="https://platform.sh/">Platform.sh</a>.
 </p>
 
 ### Features
-- PHP 8.1
-- PostgreSQL v13
+- PHP 8.2
+- PostgreSQL v14
 - Composer-based build
 - Yarn v1.22.15
 - NodeJS v16
-- a sample Product and Offer Entities
 - Mercure server v0.14.4
 
 ## Getting started
-
 
 ### Quickstart
 
@@ -73,7 +71,7 @@ The quickest way to deploy this template on Platform.sh is by clicking the butto
 This will automatically create a new project and initialize the repository for you.
 
 <p>
-<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/API-Platform-v3/main/.platform/metadata/api-platform-3-php8.1.template.yaml&utm_content=platformsh-template&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform" target="_blank">
+<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/bigfoot-workshop-with-api/tree/multiapp-finished/.platform/metadata/bigfoot-workshop-with-api.template.yaml&utm_content=platformsh-template&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform" target="_blank">
     <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Platform.sh" width="175px">
 </a>
 </p>
@@ -84,18 +82,18 @@ This will automatically create a new project and initialize the repository for y
 
 ### Local development
 
-This section provides instructions for running the `API Platform` template locally, connected to a local database instance.
+This section provides instructions for running the `Bigfoot Multi-app` template locally, connected to a local database instance.
 
 In all cases for developing with Platform.sh, it's important to develop on an isolated environment - do not connect to data on your production environment when developing locally.
 
 Each of the options below assume that you have already deployed this template to Platform.sh, as well as the following starting commands:
 
-1. Install the Platform.sh CLI
+1. Install the Symfony CLI
 
-   Follow the instructions to [install the Platform.sh CLI](https://docs.platform.sh/administration/cli.html) for your operating system.
-   You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
+   Follow the instructions to [install the Symfony CLI](https://symfony.com/download) for your operating system.
+   You can verify the installation by logging in (`symfony login`) and listing your projects (`symfony project:list`).
 
-1. Find your `PROJECT_ID` by running the command `platform project:list`
+1. Find your `PROJECT_ID` by running the command `symfony project:list`
 
    ```bash
    +---------------+------------------------------------+------------------+---------------------------------+
@@ -106,17 +104,24 @@ Each of the options below assume that you have already deployed this template to
    ```
 1. Get your Platform.sh project
    ```
-   platform get PROJECT_ID
-   cd project-name
+   symfony get PROJECT_ID
+   cd <PROJECT_FOLDER>
    ```
+
+   or clone this repo if you don't have any existing project
+   ```
+   git clone -b multiapp-finished git@github.com:platformsh-templates/bigfoot-workshop-with-api.git bigfoot-multiapp-finished
+   cd bigfoot-multiapp-finished
    
+   ```
+
 1. Start the API component:
 
    1. `cd ./api`
 
-   1. Install the <a href="https://symfony.com/download" target="_blank">Symfony CLI</a>
+   1. Install <a href="https://symfony.com/download" target="_blank">Symfony CLI</a>
 
-   1. start docker container for the database : `docker-compose up -d`
+   1. Start docker container for the database : `docker-compose up -d`
 
    1. `symfony composer install`
 
@@ -134,14 +139,32 @@ Each of the options below assume that you have already deployed this template to
 
    1. `symfony server:start -d`
 
-   1. you can go on `https://localhost:8000/api` to display your swagger interface, showing entities Offer and Product CRUD option
+   1. `yarn install && yarn encore dev` 
+
+   1. `symfony open:local` or you can go on `https://localhost:8000/api`
 
    > **Note:**
-   > if symfony server does not start your app using default port 8000, please change `REACT_APP_PUBLIC_URL` from `./admin/.env` file
+   > if symfony server does not start your app using default port 8000, please change `REACT_APP_PUBLIC_URL` from `./admin/.env` file to reflect new port in use
+
+1. Start Gatsby app in a new terminal tab
+
+   1. `cd ../gatsby`
+
+   1. Install Gatsby CLI
+
+   1. Start Gatsby
+   ```
+   export SHARP_IGNORE_GLOBAL_LIBVIPS=true (optional if using a mac) 
+   yarn
+   NODE_TLS_REJECT_UNAUTHORIZED=0  gatsby develop -p 8080
+   ```
+   
+   1. open <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a> in your browser
 
 1. Start Mercure server locally in a new terminal tab
    ```bash
-    mercure % docker run \
+   cd ../mercure
+   docker run \
        -e MERCURE_PUBLISHER_JWT_KEY='!ChangeThisMercureHubJWTSecretKey!' \
        -e MERCURE_SUBSCRIBER_JWT_KEY='!ChangeThisMercureHubJWTSecretKey!' \
        -p 8006:80 \
@@ -151,27 +174,27 @@ Each of the options below assume that you have already deployed this template to
 
 1. Start the ADMIN component in a new terminal tab
 
-   1. `cd ../admin` (assuming that you were in the `./api` folder)
+   1. `cd ../admin` (assuming that you were in the `./mercure` folder)
 
    1. `yarn install`
 
    1. `yarn start`
 
-   1. a new browser tab open url <a href="http://localhost:3000/" target="_blank">http://localhost:3000</a>   
+   1. a new browser tab should be opened automatically with url <a href="http://localhost:3000/" target="_blank">http://localhost:3000</a>
 
 1. Create a new branch
    ```
-   platform branch new_branch
+   symfony branch new_branch
    ```
 1. Develop your feature and commit it in GIT
-1. Push your code to your environment
+1. Push your code to your environment (can be done multiple time)
    ```
-   platform push
+   symfony push
    ```
 1. Push to production
    ```
-   platform checkout main
-   platform merge new_branch
+   symfony checkout main
+   symfony merge new_branch
    ```
 > **Note:**
 > For many of the steps above, you may need to include the CLI flags `-p PROJECT_ID` and `-e ENVIRONMENT_ID` if you are not in the project directory or if the environment is associated with an existing pull request.
@@ -188,14 +211,14 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
    [Register for a 30 day free trial with Platform.sh](https://auth.api.platform.sh/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to this repository's settings, or to what you have updated the default branch to locally.
 
-1. Install the Platform.sh CLI
+1. Install the Symfony CLI
 
-   Follow the instructions to [install the Platform.sh CLI](https://docs.platform.sh/administration/cli.html) for your operating system.
-   You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
+   Follow the instructions to [install the Symfony CLI](https://symfony.com/download) for your operating system.
+   You can verify the installation by logging in (`symfony login`) and listing your projects (`symfony project:list`).
 
 1. Set the project remote
 
-   Find your `PROJECT_ID` by running the command `platform project:list`
+   Find your `PROJECT_ID` by running the command `symfony project:list`
 
    ```bash
    +---------------+------------------------------------+------------------+---------------------------------+
@@ -205,7 +228,7 @@ This repository has all the code it needs in order to deploy to Platform.sh.
    +---------------+------------------------------------+------------------+---------------------------------+
    ```
 
-   Then from within your local copy, run the command `platform project:set-remote PROJECT_ID`.
+   Then from within your local copy, run the command `symfony project:set-remote PROJECT_ID`.
 
 1. Push using git
 
@@ -216,7 +239,7 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 1. or Push using platform CLI
 
    ```bash
-   platform push
+   symfony push
    ```
 
 <!-- <br/>
@@ -232,10 +255,10 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
    [Register for a 30 day free trial with Platform.sh](https://auth.api.platform.sh/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to whatever you have set at `https://YOUR_NAMESPACE/nextjs-drupal`.
 
-1. Install the Platform.sh CLI
+1. Install the Symfony CLI
 
-   Follow the instructions to [install the Platform.sh CLI](https://docs.platform.sh/administration/cli.html) for your operating system.
-   You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
+   Follow the instructions to [install the Symfony CLI](https://symfony.com/download) for your operating system.
+   You can verify the installation by logging in (`symfony login`) and listing your projects (`symfony project:list`).
 
 1. Setup the integration:
 
@@ -255,10 +278,10 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
    [Register for a 30 day free trial with Platform.sh](https://auth.api.platform.sh/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to this repository's settings, or to what you have updated the default branch to locally.
 
-1. Install the Platform.sh CLI
+1. Install the Symfony CLI
 
-   Follow the instructions to [install the Platform.sh CLI](https://docs.platform.sh/administration/cli.html) for your operating system.
-   You can verify the installation by logging in (`platformsh login`) and listing your projects (`platform project:list`).
+   Follow the instructions to [install the Symfony CLI](https://symfony.com/download) for your operating system.
+   You can verify the installation by logging in (`symfony login`) and listing your projects (`symfony project:list`).
 
 1. Create the repository
 
@@ -282,9 +305,10 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
    [Register for a 30 day free trial with Platform.sh](https://auth.api.platform.sh/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to this repository's settings, or to what you have updated the default branch to locally.
 
-1. Install the Platform.sh CLI
+1. Install the Symfony CLI
 
-Follow the instructions to install the Platform.sh CLI for your operating system. You can verify the installation by logging in (platformsh login) and listing your projects (platform project:list).
+   Follow the instructions to [install the Symfony CLI](https://symfony.com/download) for your operating system.
+   You can verify the installation by logging in (`symfony login`) and listing your projects (`symfony project:list`).
 
 1. Create the repository
 
@@ -309,7 +333,7 @@ If you are moving an existing site to Platform.sh, then in addition to code you 
 First, obtain a database dump from your current site and save your dump file as `database.sql`. Then, import the database into your Platform.sh site using the CLI:
 
 ```bash
-platform sql -e main < database.sql
+symfony sql -e main < database.sql
 ```
 
 </details>
@@ -319,16 +343,16 @@ platform sql -e main < database.sql
 You first need to download your files from your current hosting environment.
 The easiest way is likely with rsync, but consult your old host's documentation.
 
-The `platform mount:upload` command provides a straightforward way to upload an entire directory to your site at once to a `mount` defined in a `.platform.app.yaml` file.
+The `symfony mount:upload` command provides a straightforward way to upload an entire directory to your site at once to a `mount` defined in a `.platform.app.yaml` file.
 Under the hood, it uses an SSH tunnel and rsync, so it is as efficient as possible.
-(There is also a `platform mount:download` command you can use to download files later.)
+(There is also a `symfony mount:download` command you can use to download files later.)
 Run the following from your local Git repository root (modifying the `--source` path if needed and setting `BRANCH_NAME` to the branch you are using).
 
 A few examples are listed below, but repeat for all directories that contain data you would like to migrate.
 
 ```bash
-platform mount:upload -e main --mount web/sites/default/files --source ./web/sites/default/files
-platform mount:upload -e main --mount private --source ./private
+symfony mount:upload -e main --mount web/sites/default/files --source ./web/sites/default/files
+symfony mount:upload -e main --mount private --source ./private
 ```
 
 Note that `rsync` is picky about its trailing slashes, so be sure to include those.
@@ -336,7 +360,7 @@ Note that `rsync` is picky about its trailing slashes, so be sure to include tho
 </details>
 
 With your application now deployed on Platform.sh, things get more interesting.
-Run the command `platform environment:branch new-feature` for your project, or open a trivial pull request off of your current branch.
+Run the command `symfony environment:branch new-feature` for your project, or open a trivial pull request off of your current branch.
 
 The resulting environment is an *exact* copy of production (or corresponding parent environment).
 It contains identical infrastructure to what's been defined in your configuration files, and even includes data copied from your production environment in its services.
@@ -364,7 +388,7 @@ After that, here are a collection of additional resources you might find interes
 After the environment has finished its deployment, you can investigate issues that occured on startup, `deploy` and `post_deploy` hooks, and generally at runtime using the CLI. Run the command:
 
 ```bash
-platform ssh
+symfony ssh
 ```
 
 If you are running the command outside of a local copy of the project, you will need to include the `-p` (project) and/or `-e` (environment) flags as well.
@@ -377,7 +401,7 @@ Once you have connected to the container, [logs](https://docs.platform.sh/develo
 <summary><strong>Rebuilding cache</strong></summary><br/>
 
 You may run into a database error after installing Symfony on your production environment initially.
-To fix, SSH into the application container (`platform ssh`) and rebuild the cache using Symfony console:
+To fix, SSH into the application container (`symfony ssh`) and rebuild the cache using Symfony console:
 
 ```bash
 php bin/console cache:clear

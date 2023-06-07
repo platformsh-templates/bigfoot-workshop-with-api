@@ -10,17 +10,18 @@ const Index = ({ data }) => {
       <h1>Bigfoot is out there</h1>
       <h4>Recently reported sightings</h4>
       {data.bigFootSightings.bigFootSightings.edges.map(({ node }) => (
-        <div class='sighting-block' key={node.id}>
-          <Link to={`/sighting/${node.id.split("/")[4]}`}>
+        <div className='sighting-block' key={node.id}>
+            {/*TODO use dynamic index depending if on PSH (4) or local (3)*/}
+          <Link to={`/sighting/${node.id.split("/")[3]}`}>
             <p><strong>{node.title}</strong></p>
           </Link>
           <div>
             {node.description.substring(0, 100)}...
           </div>
-          <div class='sighting-details'>
+          <div className='sighting-details'>
             <em>Reported by <strong>{node.owner.username}</strong>.</em>
           </div>
-          <div class='sighting-details'>
+          <div className='sighting-details'>
           {node.comments.totalCount} comments since {node.createdAt.substring(0, 10)}.
           </div>
         </div>
