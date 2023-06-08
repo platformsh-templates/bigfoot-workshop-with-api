@@ -30,6 +30,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
         new Delete(),
         new Post(),
     ],
+    mercure: true,
 )]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {

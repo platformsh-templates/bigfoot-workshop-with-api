@@ -24,6 +24,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
         new Delete(),
         new Post(),
     ],
+    mercure: true,
 )]
 class Comment
 {

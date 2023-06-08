@@ -16,7 +16,8 @@ build:
 variables:
     env:
         NODE_OPTIONS: --max-old-space-size=1536
-
+        # ensure that assets won't be built as they are already committed.
+        NO_YARN: 1
 size: L
 
 resources:
@@ -34,7 +35,7 @@ hooks:
         yarn build --prefix-paths
 
 # The size of the persistent disk of the application (in MB).
-disk: 1280
+disk: 1536
 
 # The configuration of the application when it is exposed to the web.
 web:

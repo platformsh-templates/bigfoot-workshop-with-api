@@ -21,7 +21,8 @@ variables:
     MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
     MERCURE_SUBSCRIBER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
 
-disk: 8192
+disk: 2048
+size: L
 
 mounts:
   "database": { source: local, source_path: "database" }
