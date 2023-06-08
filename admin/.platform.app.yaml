@@ -22,12 +22,12 @@ resources:
 web:
     locations:
         "/":
-            root: "public"
+            root: "build"
             index:
                 - "index.html"
             expires: 300s
             scripts: true
-            allow: false
+            allow: true
             rules:
                 \.(css|js|gif|jpe?g|png|ttf|eot|woff2?|otf|html|ico|svg?)$:
                     allow: true
