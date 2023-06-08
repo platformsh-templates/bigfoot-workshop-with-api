@@ -10,7 +10,7 @@ variables:
   env:
     MERCUREVERSION: 0.14.4
     SERVER_NAME: ":8888"
-    MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db"
+    MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db?size=1000&cleanup_frequency=0.5"
     MERCURE_EXTRA_DIRECTIVES: |
       cors_origin *
       publish_origins *
@@ -21,7 +21,7 @@ variables:
     MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
     MERCURE_SUBSCRIBER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
 
-disk: 1024
+disk: 2048
 
 mounts:
   "database": { source: local, source_path: "database" }
