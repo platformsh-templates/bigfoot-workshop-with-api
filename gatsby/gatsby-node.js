@@ -2,7 +2,6 @@ const path = require(`path`)
 
 
 exports.createPages = ({ graphql, actions, store }) => {
-  const { setPluginStatus } = actions;
   const state = store.getState();
   const plugin = state.flattenedPlugins.find(plugin => plugin.name === "gatsby-plugin-manifest");
 
@@ -40,7 +39,7 @@ exports.createPages = ({ graphql, actions, store }) => {
       let originalPathParts = node.id.split("/")
       let newID = originalPathParts[indexFromPlugin]
       createPage({
-        path: `/sighting/${newID}/${indexFromPlugin}`,
+        path: `/sighting/${indexFromPlugin}/${newID}`,
         component: path.resolve(`./src/templates/sighting.js`),
         context: {
           // This is the $slug variable
