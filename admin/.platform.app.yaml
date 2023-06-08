@@ -32,7 +32,9 @@ web:
                 \.(css|js|gif|jpe?g|png|ttf|eot|woff2?|otf|html|ico|svg?)$:
                     allow: true
                 ^/robots\.txt$:
-                    allow: true
+                  allow: true
+                ^/manifest\.json$:
+                  allow: true
             headers:
                 Access-Control-Allow-Origin: "*"
 
