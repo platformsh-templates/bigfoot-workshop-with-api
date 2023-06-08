@@ -47,9 +47,9 @@ disk: 1024
 
 # The mounts that will be performed when the package is deployed.
 mounts:
-  '/build_platform':
-      source: local
-      source_path: build_platform
+#  '/build_platform':
+#      source: local
+#      source_path: build_platform
   '/.tmp_platformsh': 'shared:files/tmp_platformsh'
   '/build': 'shared:files/build'
   '/.cache': 'shared:files/.cache'
