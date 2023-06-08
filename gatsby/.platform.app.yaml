@@ -16,8 +16,7 @@ build:
 variables:
     env:
         NODE_OPTIONS: --max-old-space-size=1536
-        # ensure that assets won't be built as they are already committed.
-        NO_YARN: 1
+
 size: L
 
 resources:

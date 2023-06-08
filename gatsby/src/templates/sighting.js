@@ -8,7 +8,7 @@ const Sighting = ({ data }) => {
   return (
     <Layout>
       <div>
-        <h1>{post.title}</h1>
+        <h1>{post.title} {post.id}</h1>
         <div>
           {post.description}
         </div>
