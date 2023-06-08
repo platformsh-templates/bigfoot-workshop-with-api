@@ -8,6 +8,7 @@ use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Put;
+use ApiPlatform\Metadata\Post;
 use App\Repository\BigFootSightingRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -23,7 +24,6 @@ use Symfony\Component\Serializer\Annotation\Groups;
         new Put(),
         new Patch(),
         new Delete(),
-        new GetCollection(),
         new Post(),
     ],
     mercure: true,
