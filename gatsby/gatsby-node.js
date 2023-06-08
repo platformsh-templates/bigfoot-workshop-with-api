@@ -3,11 +3,11 @@ const path = require(`path`)
 
 exports.createPages = ({ graphql, actions, store }) => {
   const state = store.getState();
-  const plugin = state.flattenedPlugins.find(plugin => plugin.name === "gatsby-plugin-manifest");
+  // const plugin = state.flattenedPlugins.find(plugin => plugin.name === "gatsby-plugin-manifest");
+  //
+  // let indexFromPlugin = {...plugin.pluginOptions.index};
 
-  let indexFromPlugin = {...plugin.pluginOptions.index};
-
-  console.log(indexFromPlugin);
+  // console.log(indexFromPlugin);
   const { createPage } = actions
   return graphql(`
     {
@@ -37,7 +37,7 @@ exports.createPages = ({ graphql, actions, store }) => {
   `).then(result => {
     result.data.bigFootSightings.bigFootSightings.edges.forEach(({ node }) => {
       let originalPathParts = node.id.split("/")
-      let newID = originalPathParts[indexFromPlugin]
+      let newID = originalPathParts.pop()
       createPage({
         path: `/sighting/test${indexFromPlugin}/${newID}`,
         component: path.resolve(`./src/templates/sighting.js`),

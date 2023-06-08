@@ -12,7 +12,7 @@ const Index = ({ data }) => {
       {data.bigFootSightings.bigFootSightings.edges.map(({ node }) => (
         <div className='sighting-block' key={node.id}>
             {/*TODO use dynamic index depending if on PSH (4) or local (3)*/}
-          <Link to={`/sighting/${node.id.split("/")[3]}`}>
+          <Link to={`/sighting/${node.id.split("/").pop()}`}>
             <p><strong>{node.title}</strong></p>
           </Link>
           <div>

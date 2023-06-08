@@ -3,7 +3,7 @@
  */
 
 let backendURL = "https://localhost:8000/api/graphql"
-let index = 3;
+// let index = 3;
 let pathPrefix = '/';
 let siteUrl = 'http://localhost:8080/';
 
@@ -21,7 +21,7 @@ if ('PLATFORM_ROUTES' in process.env) {
   const result = Object.entries(data)
       .filter(([key, value]) => value.upstream == "api")
       .map(([key, value]) => key)
-  index = 4;
+  // index = 4;
   pathPrefix = '/site'
   siteUrl = `https://platform.sh`;
   backendURL = `${result[0]}/api/graphql`
