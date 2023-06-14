@@ -3,6 +3,14 @@
 Well hi there! This repository holds the code and script
 for the [Blackfire.io: Revealing Performance Secrets with Profiling](https://symfonycasts.com/screencast/blackfire) course on SymfonyCasts.
 
+## Deploy it on Platform.sh
+
+<p>
+<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/bigfoot-workshop-with-api/workshop/.platform/metadata/bigfoot-workshop-with-api.template.yaml&utm_content=platformsh-template&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform" target="_blank">
+    <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Platform.sh" width="175px">
+</a>
+</p>
+
 ## Getting Started
 To get it working, pour some coffee or tea, and follow these steps:
 1. run `git clone git@github.com:platformsh-templates/bigfoot-workshop.git`
