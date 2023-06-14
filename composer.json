@@ -52,7 +52,8 @@
         "twig/extensions": "^1.5",
         "twig/extra-bundle": "^3.3",
         "twig/intl-extra": "^3.3",
-        "twig/markdown-extra": "^3.3"
+        "twig/markdown-extra": "^3.3",
+        "webonyx/graphql-php": "^15.4"
     },
     "require-dev": {
         "dama/doctrine-test-bundle": "^7.0",
