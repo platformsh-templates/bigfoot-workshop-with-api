@@ -1,0 +1,61 @@
+# .platform.app.yaml
+
+# The name of this application, which must be unique within a project.
+name: 'gatsby'
+
+# The type key specifies the language and version for your application.
+type: 'nodejs:18'
+
+dependencies:
+    nodejs:
+        yarn: "1.22.17"
+
+build:
+    flavor: none
+
+variables:
+    env:
+        NODE_OPTIONS: --max-old-space-size=1536
+
+size: L
+
+resources:
+    base_memory: 1024
+    memory_ratio: 1024
+
+# The hooks that will be triggered when the package is deployed.
+hooks:
+    build: |
+        set -e
+        yarn --frozen-lockfile
+    # Post deploy hook builds Gatsby frontend now that backend content is available.
+    post_deploy: |
+        # printf "export PLATFORM_ROUTES=$PLATFORM_ROUTES" > .env/env.production
+        yarn build --prefix-paths
+
+# The size of the persistent disk of the application (in MB).
+disk: 1536
+
+# The configuration of the application when it is exposed to the web.
+web:
+    locations:
+        '/site':
+            # The public directory of the application relative to its root.
+            root: 'public'
+            index: ['index.html']
+            scripts: false
+            allow: true
+
+mounts:
+  '/.cache':
+      source: local
+      source_path: cache
+  '/.config':
+      source: local
+      source_path: config
+  'public':
+      source: local
+      source_path: public
+#   '/.env':
+#       source: local
+#       source_path: env
