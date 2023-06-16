@@ -7,6 +7,7 @@
 [submodule "gatsby"]
 	path = gatsby
 	url = https://github.com/platformsh-templates/bigfoot-workshop-with-api-gastby.git
-[submodule "mercure"]
-	path = mercure
+
+[submodule "test"]
+	path = bigfoot-workshop-with-api-mercure
 	url = https://github.com/platformsh-templates/bigfoot-workshop-with-api-mercure.git
