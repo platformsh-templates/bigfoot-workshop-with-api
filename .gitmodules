@@ -10,3 +10,6 @@
 [submodule "mercure-submodule"]
 	path = mercure/mercure-submodule
 	url = https://github.com/flovntp/bigfoot-workshop-with-api-mercure.git
+[submodule "app/Oro"]
+	path = src/Oro
+	url = https://github.com/orocrm/platform.git
