@@ -1,4 +1,12 @@
-
+[submodule "admin-submodule"]
+	path = admin/admin-submodule
+	url = https://github.com/platformsh-templates/bigfoot-workshop-with-api-admin.git
+[submodule "api-submodule"]
+	path = api/api-submodule
+	url = https://github.com/platformsh-templates/bigfoot-workshop-with-api-api.git
+[submodule "gatsby-submodule"]
+	path = gatsby/gatsby-submodule
+	url = https://github.com/platformsh-templates/bigfoot-workshop-with-api-gatsby.git
 [submodule "mercure-submodule"]
 	path = mercure/mercure-submodule
 	url = https://github.com/platformsh-templates/bigfoot-workshop-with-api-mercure.git
