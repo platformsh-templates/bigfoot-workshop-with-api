@@ -10,3 +10,6 @@
 [submodule "gastby"]
 	path = gatsby
 	url = https://github.com/platformsh-templates/bigfoot-workshop-with-api-gatsby.git
+[submodule "gatsby"]
+	path = gatsby
+	url = https://github.com/platformsh-templates/bigfoot-workshop-with-api-gatsby.git
