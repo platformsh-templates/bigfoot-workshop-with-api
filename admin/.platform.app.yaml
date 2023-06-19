@@ -4,6 +4,10 @@
 # The name of this app. Must be unique within a project.
 name: admin
 
+# The internal folder where the app can be found
+source:
+  root: admin/admin-submodule
+
 # The toolstack used to build the application.
 type: nodejs:16
 build:

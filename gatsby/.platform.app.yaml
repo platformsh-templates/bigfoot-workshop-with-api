@@ -6,6 +6,11 @@ name: 'gatsby'
 # The type key specifies the language and version for your application.
 type: 'nodejs:18'
 
+# The internal folder where the app can be found
+source:
+    root: gatsby/gatsby-submodule
+
+# The toolstack used to build the application.
 dependencies:
     nodejs:
         yarn: "1.22.17"

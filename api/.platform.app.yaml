@@ -7,6 +7,11 @@ name: api
 # The type of the application to build.
 type: php:8.2
 
+# The internal folder where the app can be found
+source:
+    root: api/api-submodule
+
+# The toolstack used to build the application.
 dependencies:
     php:
         composer/composer: "^2"

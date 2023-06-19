@@ -1,8 +1,17 @@
-name: mercure
-type: golang:1.18
-source:
-    root: mercure/.config
+# This file describes an application. You can have multiple applications
+# in the same project.
 
+# The name of this app. Must be unique within a project.
+name: mercure
+
+# The type of the application to build.
+type: golang:1.18
+
+# The internal folder where the app can be found
+source:
+    root: mercure/mercure-submodule/.config
+
+# The toolstack used to build the application.
 build:
   flavor: none
 

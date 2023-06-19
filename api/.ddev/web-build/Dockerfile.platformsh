@@ -1,6 +1,0 @@
-#ddev-generated
-RUN ln -sf /var/www/html /app
-
-  
-
-
