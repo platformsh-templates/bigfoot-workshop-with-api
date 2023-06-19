@@ -1,3 +1,12 @@
 [submodule "api"]
 	path = api/api-submodule
 	url = https://github.com/flovntp/bigfoot-workshop-with-api-api.git
+[submodule "mercure"]
+	path = mercure/mercure-submodule
+	url = https://github.com/flovntp/bigfoot-workshop-with-api-mercure.git
+[submodule "admin"]
+	path = admin/admin-submodule
+	url = https://github.com/flovntp/bigfoot-workshop-with-api-admin.git
+[submodule "gatsby"]
+	path = gatsby/gatsby-submodule
+	url = https://github.com/flovntp/bigfoot-workshop-with-api-gatsby.git
